@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frmods</title>
+
+  <style>
+
+    *{
+
+      margin:0; padding:0; box-sizing:border-box;
+
+      font-family:'Poppins', sans-serif;
+
+    }
+
+    body{
+
+      background:#f4f6fa;
+
+      color:#333;
+
+      line-height:1.6;
+
+    }
+
+    header{
+
+      background:#E100FF;
+
+      color:#E100FF;
+
+      padding:20px 50px;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      flex-wrap:wrap;
+
+    }
+
+    header h1{
+
+      font-size:26px;
+
+      color:#fff;
+
+    }
+
+    nav ul{
+
+      list-style:none;
+
+      display:flex;
+
+      gap:20px;
+
+      flex-wrap:wrap;
+
+    }
+
+    nav ul li a{
+
+      text-decoration:none;
+
+      color:#fff;
+
+      font-weight:500;
+
+      transition:0.3s;
+
+    }
+
+    nav ul li a:hover{
+
+      color:#E100FF;
+
+    }
+
+    .hero{
+
+      background:url('https://source.unsplash.com/1600x500/?blog,writing') no-repeat center/cover;
+
+      height:300px;
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+      color:#E100FF;
+
+      font-size:40px;
+
+      font-weight:bold;
+
+      text-shadow:2px 2px 6px #000;
+
+    }
+
+    .container{
+
+      width:90%;
+
+      margin:30px auto;
+
+    }
+
+    h2{
+
+      margin:20px 0;
+
+      color:#1a1a2e;
+
+      border-left:5px solid #E100FF;
+
+      padding-left:10px;
+
+    }
+
+    .search-bar{
+
+      margin:20px 0;
+
+      display:flex;
+
+      justify-content:center;
+
+      gap:10px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .search-bar input{
+
+      padding:10px;
+
+      width:250px;
+
+      border:1px solid #ccc;
+
+      border-radius:5px;
+
+    }
+
+    .search-bar select{
+
+      padding:10px;
+
+      border:1px solid #ccc;
+
+      border-radius:5px;
+
+    }
+
+    .search-bar button{
+
+      padding:10px 20px;
+
+      background:#E100FF;
+
+      border:none;
+
+      border-radius:5px;
+
+      color:#fff;
+
+      cursor:pointer;
+
+    }
+
+    .search-bar button:hover{
+
+      background:#0077b6;
+
+    }
+
+    .blog-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+      gap:20px;
+
+    }
+
+    .card{
+
+      background:#fff;
+
+      border-radius:12px;
+
+      overflow:hidden;
+
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+
+      transition:0.3s;
+
+    }
+
+    .card:hover{
+
+      transform:translateY(-5px);
+
+    }
+
+    .card img{
+
+      width:100%;
+
+      height:180px;
+
+      object-fit:cover;
+
+    }
+
+    .card-content{
+
+      padding:15px;
+
+    }
+
+    .card-content h3{
+
+      font-size:20px;
+
+      margin-bottom:10px;
+
+      color:#1a1a2e;
+
+    }
+
+    .card-content p{
+
+      font-size:15px;
+
+      color:#555;
+
+      margin-bottom:15px;
+
+    }
+
+    .btn{
+
+      display:inline-block;
+
+      padding:10px 20px;
+
+      background:#E100FF;
+
+      color:#fff;
+
+      border-radius:30px;
+
+      text-decoration:none;
+
+      font-size:14px;
+
+      font-weight:500;
+
+      transition:0.3s;
+
+    }
+
+    .btn:hover{
+
+      background:#0077b6;
+
+    }
+
+    .comment-box{
+
+      margin-top:30px;
+
+      background:#fff;
+
+      padding:20px;
+
+      border-radius:10px;
+
+      box-shadow:0 4px 6px rgba(0,0,0,0.1);
+
+    }
+
+    .comment-box h3{
+
+      margin-bottom:15px;
+
+      color:#1a1a2e;
+
+    }
+
+    .comment-box textarea{
+
+      width:100%;
+
+      height:100px;
+
+      padding:10px;
+
+      border:1px solid #ccc;
+
+      border-radius:5px;
+
+      margin-bottom:10px;
+
+    }
+
+    .comment-box button{
+
+      padding:10px 20px;
+
+      background:#E100FF;
+
+      color:#fff;
+
+      border:none;
+
+      border-radius:5px;
+
+      cursor:pointer;
+
+    }
+
+    .comment-box button:hover{
+
+      background:#0077b6;
+
+    }
+
+    footer{
+
+      background:#E100FF;
+
+      color:#fff;
+
+      text-align:center;
+
+      padding:20px;
+
+      margin-top:30px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>DXRYLIT PAGE</h1>
+
+  </header>
+
+  <div class="hero">Scripts below 👇🏻</div>
+
+  <div class="container">
+
+    <h2>Latest Posts</h2>
+
+    <div class="search-bar">
+
+      <input type="text" id="search" placeholder="Search posts...">
+
+      <select id="category">
+
+        <option value="all">All</option>
+
+        <option value="UNIVERSAL AIMBOT">UNIVERSAL AIMBOT</option>
+
+      </select>
+
+      <button onclick="filterPosts()">Search</button>
+
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <div class="card" data-category="UNIVERSAL AIMBOT">
+
+        <img src="universalaimbot.png" alt="">
+
+        <div class="card-content">
+
+          <h3>UNIVERSAL AIMBOT</h3>
+
+          <p>UNIVERSAL AIMBOT WITHOUT BYPASS, FIRST TRY IN SECOND ACCOUNT</p>
+
+          <a href="https://youtube.com" class="btn">DOWNLOAD</a>
+
+        </div>
+
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="comment-box">
+
+      <h3>Leave a Comment</h3>
+
+      <textarea placeholder="Write your comment..."></textarea>
+
+      <button>Post Comment</button>
+
+    </div>
+
+  </div>
+     <h4>　</h4>
+     
+     <h4>　Owner: Dxry</h4>
+
+  <footer>
+
+    <p>&copy; Only Free💥</p>
+
+  </footer>
+
+  <script>
+
+    function filterPosts(){
+
+      const search = document.getElementById('search').value.toLowerCase();
+
+      const category = document.getElementById('category').value;
+
+      const posts = document.querySelectorAll('.card');
+
+      posts.forEach(post => {
+
+        const title = post.querySelector('h3').innerText.toLowerCase();
+
+        const postCategory = post.getAttribute('data-category');
+
+        if((title.includes(search) || search === '') && (category === 'all' || category === postCategory)){
+
+          post.style.display = 'block';
+
+        } else {
+
+          post.style.display = 'none';
+
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
